@@ -64,7 +64,7 @@ def scanPptDirectoryTree(searchTerm,path):
             
 #Passes command line arguments into the above functions
 #syntax is
-#   scanner.py [path] [searchTerm] 
+#   pptScanner.py [path] [searchTerm] 
 def main():
     if len(sys.argv) > 2:
         searchTerm = sys.argv[2]
