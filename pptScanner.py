@@ -35,9 +35,9 @@ def scanPpt(searchTerm,fileName):
     
     #Return results
     if matchedSlides == list():
-        return "\t...\t" + fileName.split('/')[-1]
+        return "\t...\t" + fileName.split(delim)[-1]
     else:
-        return "\t(" + ",".join(matchedSlides) + ")\t" + fileName.split('/')[-1] 
+        return "\t(" + ",".join(matchedSlides) + ")\t" + fileName.split(delim)[-1] 
 
 #Passes every ppt in a directory to the scanPpt function
 def scanPptDirectory(searchTerm,path):
