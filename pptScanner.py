@@ -22,7 +22,7 @@ def scanPpt(searchTerm,fileName):
 
     #For each file that is in the slides directory, search its contents
     for f in ppDir:
-        #Filters out every file that isn't the a slide XML file
+        #Filters out every file that isn't a slide XML file
         if re.match(r'ppt/slides/[^/]+\.xml',f):
             #Read the ppt slide file from the ppt archive, and decode it to be a normal string
             slide = ppt.read(f).decode()
