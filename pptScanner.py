@@ -61,18 +61,14 @@ def scanPptDirectoryTree(searchTerm,path):
     for root, dirs, files in os.walk(path):
         for directory in dirs:
             scanPptDirectory(searchTerm,(root + delim + directory).replace(delim*2,delim)) #Replaces '\\' with '\'
-
+            
 #Passes command line arguments into the above functions
 #syntax is
-#   scanner.py [searchTerm] [path] [recursive?]
-#if the recursive argument exists at all, it searches all powerpoints in a directory tree
+#   scanner.py [path] [searchTerm] 
 def main():
     if len(sys.argv) > 2:
-        searchTerm = sys.argv[1]
-        path = sys.argv[2]
-        if len(sys.argv) > 3:
-            scanPptDirectoryTree(searchTerm,path)
-        else:
-            scanPptDirectory(searchTerm,path)
+        searchTerm = sys.argv[2]
+        path = sys.argv[1]
+        scanPptDirectoryTree(searchTerm,path)
 
 main()
